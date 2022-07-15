@@ -1,25 +1,28 @@
-<div class="row">
+<div class="row col-10" style="margin: auto; margin-top: 10vh;">
+    <h2>Contacts</h2>
     <div class="container">
-        <button class="btn btn-success">New</button>
-    </div>
-</div>
-<div class="row col-11">
-    <div class="container">
-        <a href="#" class="list-group-item clearfix d-flex p-2 flex-row  align-items-center" *ngFor="let contact of contacts">
+        <a href="#" class="list-group-item clearfix d-flex p-2 flex-row  align-items-center"
+            *ngFor="let contact of contacts">
             <span class="col-2 flex-row-reverse text-end align-items-center">
-                <div style="margin: auto; width: 15vh; height: 15vh; background-image: url({{contact.imgpath}}); background-size: cover; border-radius: 50%;"></div> <!--Set this as a div because I wanted to set an image that would have to follow the rule of a specific hxw, but without distorting the image itself.-->
+                <div
+                    style="margin: auto; width: 15vh; height: 15vh; background-image: url({{contact.imgpath}}); background-size: cover; border-radius: 50%;">
+                </div>
+                <!--Set this as a div because I wanted to set an image that would have to follow the rule of a specific hxw, but without distorting the image itself.-->
                 <!--<img src="{{contact.imgpath}}" alt="{{contact.fname}}'s profile picture" class="align-self-center img-responsive" style="height: 15vh; width: 15vh;"/> keeping this in case i change my mind-->
             </span>
             <div class="col-10 d-flex p-2 flex-row align-items-baseline justify-content-start">
-                <h4 class="m-2 list-group-item-heading text-wrap" style="width: 40%; word-wrap: break-word;">{{ contact.fname }} {{ contact.lname }}</h4>
+                <h4 class="m-2 list-group-item-heading text-wrap" style="width: 40%; word-wrap: break-word;">{{
+                    contact.fname }} {{ contact.lname }}</h4>
                 <div class="d-flex p-2 flex-row justify-content-end" style="width: 60%;">
-                    <p class="m-2 list-group-item-text text-wrap" style="width: 50%; word-wrap: break-word;">{{contact.phonenr}}</p>
-                    <p class="m-2 list-group-item-text" style="width: 50%; word-wrap: break-word;">{{contact.caddress}}</p>
+                    <p class="m-2 list-group-item-text text-wrap" style="width: 50%; word-wrap: break-word;">
+                        {{contact.phonenr}}</p>
+                    <p class="m-2 list-group-item-text" style="width: 50%; word-wrap: break-word;">{{contact.caddress}}
+                    </p>
                 </div>
                 <!-- option for one row. <h4 class="m-2 col-6 list-group-item-heading align-self-center">Name Surname</h4>
                 <p class="m-2 col-6 list-group-item-text align-self-center">Phone Nr</p>-->
             </div>
-            
+
         </a>
         <app-contact-item></app-contact-item>
     </div>
