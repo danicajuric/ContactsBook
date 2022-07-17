@@ -1,4 +1,4 @@
-export class Contact{
+export class UserContact{
     public fname: string;
     public lname: string;
     public phonenr: string;
