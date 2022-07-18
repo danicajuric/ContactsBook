@@ -1,7 +1,10 @@
-<a href="#" class="list-group-item clearfix d-flex p-2 flex-row  align-items-center">
+<a 
+    href="#" 
+    class="list-group-item clearfix d-flex p-2 flex-row  align-items-center"
+    (click)="onSelected()">
             <span class="col-2 flex-row-reverse text-end align-items-center">
                 <div
-                    style="margin: auto; width: 15vh; height: 15vh; background-image: url({{contactX.imgpath}}); background-size: cover; border-radius: 50%;">
+                    style="margin: auto; width: 15vh; height: 15vh; background-image: url({{contactX.imgpath}}); background-size: cover; border-radius: 50%; border: 4px #00A3E0 groove;">
                 </div>
                 <!--Set this as a div because I wanted to set an image that would have to follow the rule of a specific hxw, but without distorting the image itself.-->
                 <!--<img src="{{contact.imgpath}}" alt="{{contact.fname}}'s profile picture" class="align-self-center img-responsive" style="height: 15vh; width: 15vh;"/> keeping this in case i change my mind-->

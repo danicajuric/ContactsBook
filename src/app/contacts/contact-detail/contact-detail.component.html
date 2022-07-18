@@ -1,21 +1,22 @@
 <div id="overlay-comp">
 
 </div>
-<div class="row col-7" style="background-color: white; margin: auto; margin-top: 10vh; z-index: 5;">
+<div class="row col-11" style="background-color: white; margin: auto; margin-top: 10vh; z-index: 5;">
+    <h2>Detailed view</h2>
     <div class="card" style="padding:0;">
-        <div style="height: 2vh; background-color: #C5E86C; background-size: cover;"></div>
+        <div style="height: 2vh; background-color: #00A3E0; background-size: cover;"></div>
         <div class="d-flex p-2 flex-row">
             <div class="m-4" >
                 <img style="height: 25vh;"
-                    src="https://images.pexels.com/photos/12498564/pexels-photo-12498564.jpeg" />
+                    src="{{ contactView.imgpath }}" />
             </div>
             <div class="col-md-7 col-sm-5 col-lg-8 mt-4">
                 <!--<img class="card-img-top" src="https://images.pexels.com/photos/12498564/pexels-photo-12498564.jpeg" alt="Card image cap">-->
                 <div class="card-body">
-                    <h5 class="card-title">Name Surname</h5>
-                    <hr>
-                    <p class="card-text">Phone Number</p>
-                    <p class="card-text">Address</p>
+                    <h5 class="card-title">{{ contactView.fname }} {{ contactView.lname}} </h5>
+                    <hr style="width:10vw;">
+                    <p class="card-text">{{ contactView.phonenr }}</p>
+                    <p class="card-text">{{ contactView.caddress }}</p>
                 </div>
             </div>
         </div>
