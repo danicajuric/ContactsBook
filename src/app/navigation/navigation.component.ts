@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-navigation',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavigationComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
   }
 
+  onNewContact(){
+    this.router.navigate(['contacts/new'], {relativeTo: this.route});
+  }
 }

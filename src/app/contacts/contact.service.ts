@@ -12,4 +12,7 @@ export class ContactService {
     getContacts(){ //get function which allows access from the outside
         return this.contacts.slice(); //slice returns an exact copy of the array in the service
     }
+    getContact(id: number){
+        return this.contacts[id];
+    }
 }

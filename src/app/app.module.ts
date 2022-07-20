@@ -8,6 +8,8 @@ import { ContactListComponent } from './contacts/contact-list/contact-list.compo
 import { ContactDetailComponent } from './contacts/contact-detail/contact-detail.component';
 import { ContactItemComponent } from './contacts/contact-list/contact-item/contact-item.component';
 import { NavigationComponent } from './navigation/navigation.component';
+import { ContactDefaultComponent } from './contacts/contact-default/contact-default.component';
+import { NewContactComponent } from './contacts/new-contact/new-contact.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import { NavigationComponent } from './navigation/navigation.component';
     ContactListComponent,
     ContactDetailComponent,
     ContactItemComponent,
-    NavigationComponent
+    NavigationComponent,
+    ContactDefaultComponent,
+    NewContactComponent
   ],
   imports: [
     BrowserModule,

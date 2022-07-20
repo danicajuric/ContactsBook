@@ -1,7 +1,9 @@
 <a
     class="list-group-item clearfix d-flex p-2 flex-row  align-items-center"
     style="cursor: pointer;"
-    (click)="onSelected()">
+    [routerLink]="[index]"
+    routerLinkActive="active"
+    >
             <span class="col-2 flex-row-reverse text-end align-items-center">
                 <div
                     style="margin: auto; width: 15vh; height: 15vh; background-image: url({{contactX.imgpath}}); background-size: cover; border-radius: 50%; border: 4px #00A3E0 groove;">

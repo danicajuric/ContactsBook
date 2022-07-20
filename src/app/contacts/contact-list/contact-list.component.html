@@ -2,7 +2,8 @@
     <h2>Contacts</h2>
     <div class="container">
         <app-contact-item 
-        *ngFor="let contactC of contacts" 
-        [contactX]="contactC"></app-contact-item>
+        *ngFor="let contactC of contacts; let i = index" 
+        [contactX]="contactC"
+        [index]="i"></app-contact-item>
     </div>
 </div>

@@ -4,11 +4,7 @@
             <app-contact-list></app-contact-list>
         </div>
         <div class="col-5 d-inline-block">
-            <app-contact-detail *ngIf="selectedContact.fname.length; else replacementBlock" [contactView]="selectedContact">
-            </app-contact-detail>
-            <ng-template #replacementBlock>
-                <p>No contact selected.</p>
-            </ng-template>
+            <router-outlet></router-outlet>
         </div>
     </div>
 </div>
