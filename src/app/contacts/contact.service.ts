@@ -1,8 +1,7 @@
-import { EventEmitter } from '@angular/core';
 import { UserContact } from './contact.model';
 
 export class ContactService {
-    contactSelected = new EventEmitter<UserContact>();
+    //contactSelected = new Subject<UserContact>(); dont need this
 
     private contacts: UserContact[] = [ //made private so it cant be directly addressed from the outside
         new UserContact('Danicaaaaaaaaaaaaa', 'Juric', '+387000000', 'Some Address 88', "https://images.pexels.com/photos/12025241/pexels-photo-12025241.jpeg"),
