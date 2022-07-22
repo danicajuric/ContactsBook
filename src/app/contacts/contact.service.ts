@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { UserContact } from './contact.model';
+import { Store } from '@ngrx/Store';
 
 @Injectable()
 
@@ -28,7 +29,7 @@ export class ContactService {
     getContact(id: number) {
         return this.contacts.find((contact: UserContact) => contact.id===id);
     }
-    addContact(contact: UserContact) {
+    addContact(contact: UserContact) { //mutation
         this.contacts.push(contact);
         localStorage.setItem('contacts', JSON.stringify(this.contacts));
         this.contactsSubscription.next(this.contacts); //triggers emit when new contact is pushed onto list

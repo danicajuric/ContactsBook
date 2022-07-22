@@ -1,26 +1,42 @@
-<a class="col-12 list-group-item clearfix d-flex p-2 flex-row  align-items-center" 
+<a class="col-12 list-group-item clearfix" 
     style="cursor: pointer;"
     [routerLink]="[contactX.id]" 
     routerLinkActive="active">
-    <span class="col-2 flex-row-reverse text-end align-items-center">
+    <div id="flex-contact-container">
+        <div class="flex-contact-item">
+            <div class="flex-contact-item-avatar">
+                <img class="flex-contact-item-img" src="{{contactX.imgpath}}" onerror="this.src='../../../assets/img/BlankImage.jpg'" />
+            </div>
+        </div>
+        <div class="flex-contact-item">
+            {{ contactX.fname | titlecase}} {{ contactX.lname | titlecase}}
+        </div>
+        <div class="flex-contact-item">
+            {{contactX.phonenr}}
+        </div>
+        <div class="flex-contact-item">
+            {{contactX.caddress}}
+        </div>
+    </div>
+    <!--<span class="col-2 flex-row-reverse text-end align-items-center">
         <div
             style="margin: auto; width: 10vh; height: 10vh; background-image: url({{contactX.imgpath}}); background-size: cover; border-radius: 50%; border: 4px #00A3E0 solid;">
         </div>
-        <!--Set this as a div because I wanted to set an image that would have to follow the rule of a specific hxw, but without distorting the image itself.-->
-        <!--<img src="{{contact.imgpath}}" alt="{{contact.fname}}'s profile picture" class="align-self-center img-responsive" style="height: 15vh; width: 15vh;"/> keeping this in case i change my mind-->
+        COMMENT Set this as a div because I wanted to set an image that would have to follow the rule of a specific hxw, but without distorting the image itself.
+        COMMENT <img src="{{contact.imgpath}}" alt="{{contact.fname}}'s profile picture" class="align-self-center img-responsive" style="height: 15vh; width: 15vh;"/> keeping this in case i change my mind
     </span>
     <div class="col-10 d-flex p-2 flex-row align-items-baseline justify-content-start"
         style="word-wrap: break-word;">
-        <h4 class="m-2 list-group-item-heading text-wrap" style="width: 40%; word-wrap: break-word;">{{
+        <h4 class="my-responsive-txt m-2 list-group-item-heading text-wrap" style="width: 40%; word-wrap: break-word;">{{
             contactX.fname | titlecase}} {{ contactX.lname | titlecase}}</h4>
         <div class="d-flex p-2 flex-row justify-content-end" style="width: 60%;">
-            <p class="m-2 list-group-item-text text-wrap" style="width: 50%; word-wrap: break-word;">
+            <p class="my-responsive-txt m-2 list-group-item-text text-wrap" style="width: 50%; word-wrap: break-word;">
                 {{contactX.phonenr}}</p>
-            <p class="m-2 list-group-item-text" style="width: 50%; word-wrap: break-word;">
+            <p class="my-responsive-txt m-2 list-group-item-text" style="width: 50%; word-wrap: break-word;">
                 {{contactX.caddress}}
             </p>
         </div>
-        <!-- option for one row. <h4 class="m-2 col-6 list-group-item-heading align-self-center">Name Surname</h4>
-                <p class="m-2 col-6 list-group-item-text align-self-center">Phone Nr</p>-->
-    </div>
+        COMMENT option for one row. <h4 class="m-2 col-6 list-group-item-heading align-self-center">Name Surname</h4>
+                <p class="m-2 col-6 list-group-item-text align-self-center">Phone Nr</p>
+    </div>-->
 </a>

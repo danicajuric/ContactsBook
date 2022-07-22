@@ -8,12 +8,12 @@
         <div class="d-flex p-2 flex-row">
             <div class="m-4" >
                 <img style="height: 180px; width: 150px;"
-                    src="{{ contactView.imgpath }}" />
+                    src="{{ contactView.imgpath }}" onerror="this.src='../../../assets/img/BlankImage.jpg'" />
             </div>
             <div class="col-md-7 col-sm-5 col-lg-8 mt-4">
                 <!--<img class="card-img-top" src="https://images.pexels.com/photos/12498564/pexels-photo-12498564.jpeg" alt="Card image cap">-->
                 <div class="card-body" style="word-wrap: break-word; inline-size: min-content;">
-                    <h5 class="card-title" >{{ contactView.fname }} {{ contactView.lname}} </h5>
+                    <h5 class="card-title" >{{ contactView.fname | titlecase }} {{ contactView.lname | titlecase}} </h5>
                     <hr style="width:10vw;">
                     <p class="card-text">{{ contactView.phonenr }}</p>
                     <p class="card-text">{{ contactView.caddress }}</p>
