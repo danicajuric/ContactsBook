@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { of } from 'rxjs';
 
 import { ContactListComponent } from './contact-list.component';
 
@@ -19,5 +20,17 @@ describe('ContactListComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should return the contacts from local storage', () => {
+    const contactsResponse = JSON.parse(localStorage.getItem('contacts') || '[]');
+    let response;
+    spyOn(component, 'getInitialStateContacts').and.returnValue(of(contactsResponse));
+
+    component.getInitialStateContacts().subscribe(res => {
+      response = res;
+    });
+
+    expect(response).toEqual(contactsResponse);
   });
 });
