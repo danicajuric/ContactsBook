@@ -10,6 +10,8 @@ import { ContactItemComponent } from './contacts/contact-list/contact-item/conta
 import { NavigationComponent } from './navigation/navigation.component';
 import { ContactDefaultComponent } from './contacts/contact-default/contact-default.component';
 import { NewContactComponent } from './contacts/new-contact/new-contact.component';
+import { FormsModule } from '@angular/forms';
+import { ContactService } from './contacts/contact.service';
 
 @NgModule({
   declarations: [
@@ -24,9 +26,12 @@ import { NewContactComponent } from './contacts/new-contact/new-contact.componen
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
-  providers: [],
+  providers: [
+    ContactService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

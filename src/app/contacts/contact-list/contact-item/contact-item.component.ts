@@ -7,7 +7,7 @@ import { UserContact } from '../../contact.model';
   styleUrls: ['./contact-item.component.scss']
 })
 export class ContactItemComponent implements OnInit {
-  @Input() contactX: UserContact = new UserContact('', '', '', '', '')
+  @Input() contactX!: UserContact;
   @Input() index: number | undefined;
   
   constructor() { }

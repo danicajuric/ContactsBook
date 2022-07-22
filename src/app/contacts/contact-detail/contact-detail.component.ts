@@ -9,7 +9,7 @@ import { ContactService } from '../contact.service';
   styleUrls: ['./contact-detail.component.scss']
 })
 export class ContactDetailComponent implements OnInit {
-  contactView: UserContact = new UserContact('', '', '', '', '');
+  contactView!: UserContact;
   id: number | undefined;
  
   constructor(private contactService: ContactService, private route: ActivatedRoute) { }
@@ -19,7 +19,9 @@ export class ContactDetailComponent implements OnInit {
       .subscribe(
         (params: Params) => {
           this.id = +params['id'];
-          this.contactView = this.contactService.getContact(this.id);
+          this.contactView = 
+            this.contactService.getContact(this.id) 
+            || new UserContact(0, 'Contact', 'not found', 'x', 'x', ''); //if there arent contacts, contact not found
         }
       );
   }

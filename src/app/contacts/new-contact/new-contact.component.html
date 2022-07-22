@@ -1,45 +1,54 @@
 <div class="row col-12" style="margin: auto; margin-top: 10vh;">
-    <form (ngSubmit)="onAddItem(f)" #f="ngForm">
-        <label for="fname">First name:</label>
-        <input 
-            id="fname" 
-            type="text" 
-            class="form-control"
-            name="fname"
-            ngModel
-            required>
-        <label for="lname">Last name:</label>
-        <input 
-            id="lname" 
-            type="text" 
-            class="form-control"
-            name="lname"
-            ngModel
-            required>
-        <label for="phone">Phone number:</label>
-        <input 
-            id="phone" 
-            type="text" 
-            class="form-control"
-            name="phone"
-            ngModel
-            required>
-        <label for="address">Address:</label>
-        <input 
-            id="address" 
-            type="text" 
-            class="form-control"
-            name="address"
-            ngModel>
-        <label for="pfp">Pic path:</label>
-        <input 
-                id="pfp" 
+    <h2>Add new contact:</h2>
+    <div class="container">
+        <form (ngSubmit)="onAddItem(f)" #f="ngForm">
+            <label for="fname">First name:</label>
+            <input 
+                id="fname" 
                 type="text" 
                 class="form-control"
-                name="pfp"
+                name="fname"
+                ngModel
+                required>
+            <label for="lname">Last name:</label>
+            <input 
+                id="lname" 
+                type="text" 
+                class="form-control"
+                name="lname"
+                ngModel
+                required>
+            <label for="phone">Phone number:</label>
+            <input 
+                id="phone" 
+                type="text" 
+                class="form-control"
+                name="phone"
+                ngModel
+                required>
+            <label for="address">Address:</label>
+            <input 
+                id="address" 
+                type="text" 
+                class="form-control"
+                name="address"
                 ngModel>
-        <button 
-            class="btn btn-success"
-            [disabled]="!f.valid">Add</button>
-    </form>
+            <label for="pfp">Pic path:</label>
+            <input 
+                    id="pfp" 
+                    type="text" 
+                    class="form-control"
+                    name="pfp"
+                    ngModel>
+            <button 
+                class="btn btn-success"
+                [disabled]="!f.valid"
+                type="submit"
+                >Add</button>
+            <button 
+                class="m-2 btn btn-danger" 
+                type="button"
+                (click)="onClear()">Cancel</button>
+            </form>
+    </div>
 </div>

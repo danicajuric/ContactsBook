@@ -1,17 +1,36 @@
+import { Injectable } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
 import { UserContact } from './contact.model';
+
+@Injectable()
 
 export class ContactService {
     //contactSelected = new Subject<UserContact>(); dont need this
 
-    private contacts: UserContact[] = [ //made private so it cant be directly addressed from the outside
-        new UserContact('danica', 'Juric', '+387000000', 'Some Address 88', "https://images.pexels.com/photos/12025241/pexels-photo-12025241.jpeg"),
-        new UserContact('Anđela', 'juric', '+38ddddddddd7111111', 'Some Address 88', "https://images.pexels.com/photos/12498564/pexels-photo-12498564.jpeg")
-      ];
+    private contacts: UserContact[] = [];
 
-    getContacts(){ //get function which allows access from the outside
-        return this.contacts.slice(); //slice returns an exact copy of the array in the service
+    contactsSubscription: BehaviorSubject<UserContact[]> = new BehaviorSubject(this.contacts);
+
+    constructor() {
+        let _contacts = JSON.parse(localStorage.getItem('contacts') || 'false');
+
+        if(_contacts){
+            this.contacts=_contacts;
+            this.contactsSubscription.next(this.contacts); //allows access from the outside
+        }
     }
-    getContact(id: number){
-        return this.contacts[id];
+
+    get contacts$ () {
+        return this.contactsSubscription.asObservable();
+    }
+
+    
+    getContact(id: number) {
+        return this.contacts.find((contact: UserContact) => contact.id===id);
+    }
+    addContact(contact: UserContact) {
+        this.contacts.push(contact);
+        localStorage.setItem('contacts', JSON.stringify(this.contacts));
+        this.contactsSubscription.next(this.contacts); //triggers emit when new contact is pushed onto list
     }
 }
